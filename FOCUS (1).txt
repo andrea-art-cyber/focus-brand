@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>BRAND FOCUS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:tahoma;background:#000;color:#fff}
+  header{background:#ff0000;padding:15px;text-align:center;font-size:22px;font-weight:bold;letter-spacing:1px}
+  .page{display:none;padding:15px}
+  .active{display:block}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+  .card{background:#111;border-radius:12px;overflow:hidden;border:1px solid #222;cursor:pointer}
+  .card img{width:100%;height:auto;max-height:250px;object-fit:contain;background:#111;display:block}
+  .card h3{padding:8px;font-size:14px}
+  .price{padding:0 8px 8px;color:#ff0000;font-weight:bold}
+  .detail-img{width:100%;height:auto;max-height:500px;object-fit:contain;border-radius:12px;background:#111;margin-bottom:10px}
+  .back{color:#ff0000;cursor:pointer;margin-bottom:12px;font-size:18px;font-weight:bold;padding:5px 0}
+  h2{margin:10px 0}
+  p{color:#aaa;margin:5px 0}
+  .sizes{display:flex;gap:8px;margin:15px 0;flex-wrap:wrap}
+  .size-btn{flex:1;min-width:60px;padding:12px;border-radius:8px;background:#111;color:#fff;border:2px solid #333;cursor:pointer;font-size:16px;font-weight:bold}
+  .size-btn.active{border-color:#ff0000;background:#ff0000;color:#fff}
+  button{background:#25D366;border:none;color:white;padding:16px;border-radius:10px;width:100%;font-size:18px;font-weight:bold;cursor:pointer;margin-top:20px}
+  button:hover{background:#1ebe57}
+  .gallery-title{margin:15px 0 8px;font-weight:bold;color:#fff;font-size:16px}
+</style>
+</head>
+<body>
+
+<header>BRAND FOCUS</header>
+
+<div id="home" class="page active">
+  <div class="grid">
+    <div class="card" onclick="showDetail()">
+      <img src="https://i.ibb.co/spxdt6fy/IMG-20250927-002021-855.jpg">
+      <h3>T-Shirt Focus x Pablo</h3>
+      <div class="price">450 جنيه</div>
+    </div>
+  </div>
+</div>
+
+<div id="detail" class="page">
+  <div class="back" onclick="showPage('home')">← رجوع</div>
+  
+  <p class="gallery-title">صورة الوش</p>
+  <img class="detail-img" src="https://i.ibb.co/spxdt6fy/IMG-20250927-002021-855.jpg">
+  
+  <p class="gallery-title">صورة الضهر</p>
+  <img class="detail-img" src="https://i.ibb.co/tPT8hvjp/IMG-20250927-002021-855.jpg">
+  
+  <h2>T-Shirt Focus x Pablo</h2>
+  <p>قطن 100% أسود مط</p>
+  
+  <p style="margin-top:15px;font-weight:bold">اختار المقاس:</p>
+  <div class="sizes">
+    <div class="size-btn" onclick="selectSize('S', this)">S</div>
+    <div class="size-btn" onclick="selectSize('M', this)">M</div>
+    <div class="size-btn" onclick="selectSize('L', this)">L</div>
+    <div class="size-btn" onclick="selectSize('XL', this)">XL</div>
+    <div class="size-btn" onclick="selectSize('2XL', this)">2XL</div>
+  </div>
+  
+  <div style="font-size:28px;color:#ff0000;margin:15px 0;font-weight:bold">450 جنيه</div>
+  <button onclick="order()">اطلب الآن من الموقع</button>
+</div>
+
+<script>
+let selectedSize = '';
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function showDetail(){ 
+  showPage('detail'); 
+  selectedSize = '';
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+}
+function selectSize(size, el){
+  selectedSize = size;
+  document.querySelectorAll('.size-btn').forEach(b=>b.classList.remove('active'));
+  el.classList.add('active');
+}
+function order(){
+  if(!selectedSize){ alert("اختار المقاس الأول يا وحش"); return; 
+
+  <html/>
